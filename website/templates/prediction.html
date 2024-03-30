@@ -1,0 +1,86 @@
+{% extends "root.html" %}{% block title %} Krishi Sevak | Crop Prediction {% endblock %} {% block content%}
+<div class="loginform2">
+<form class='predict' method="POST">
+    {% if result%}
+    <div class="container">
+        <div class="container">
+            <h2>Predicted Crop</h2>
+            <p>The recommended crop is {{ result }}</p>
+            <h3>Schedule:</h3>
+            <table>
+              <tr>
+                <th>Phase</th>
+                <th>Start Date</th>
+              </tr>
+              {% for index, row in schedule.iterrows() %}
+              <tr>
+                <td>Land Preparation</td>
+                <td>{{ row['land_preparation'] }}</td>
+              </tr>
+              <tr>
+                <td>Sowing</td>
+                <td>{{ row['sowing'] }}</td>
+              </tr>
+              <tr>
+                <td>Vegetative Growth</td>
+                <td>{{ row['vegetative_growth'] }}</td>
+              </tr>
+              <tr>
+                <td>Flowering & Pollination</td>
+                <td>{{ row['flowering_pollination'] }}</td>
+              </tr>
+              <tr>
+                <td>Fruit Development</td>
+                <td>{{ row['fruit_development'] }}</td>
+              </tr>
+              <tr>
+                <td>Ripening</td>
+                <td>{{ row['ripening'] }}</td>
+              </tr>
+              <tr>
+                <td>Harvesting</td>
+                <td>{{ row['harvesting_days'] }}</td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+      </div>
+      {% else %}
+        
+    <div class="mb-3">
+      <label for="param1" class="form-label">Nitrogen</label>
+      <input type="number" class="form-control" id="param1"name='param1' placeholder="param1">
+    </div>
+    <div class="mb-3">
+        <label for="param2" class="form-label">Phosphorus</label>
+        <input type="number" class="form-control" id="param2"name='param2' placeholder="param2">
+    </div>
+    <div class="mb-3">
+        <label for="param3" class="form-label">Potassium</label>
+        <input type="number" class="form-control" id="param3"name='param3' placeholder="param3">
+    </div>
+    <div class="mb-3">
+        <label for="param4" class="form-label">Temperature</label>
+        <input type="number" class="form-control" id="param4"name='param4' placeholder="param4">
+    </div>
+    <div class="mb-3">
+        <label for="param5" class="form-label">Humidity</label>
+        <input type="number" class="form-control" id="param5"name='param5' placeholder="param5">
+    </div>
+    <div class="mb-3">
+        <label for="param6" class="form-label">Ph</label>
+        <input type="number" class="form-control" id="param6"name='param6' placeholder="param6">
+    </div>
+    <div class="mb-3">
+        <label for="param7" class="form-label">Rainfall</label>
+        <input type="number" class="form-control" id="param7"name='param7' placeholder="param7">
+      </div>
+
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+{% endif %}
+</form>
+
+</div>
+
+{% endblock %}

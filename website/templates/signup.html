@@ -1,0 +1,153 @@
+{% extends "skeleton.html" %}{% block title %}Signup{% endblock %} {% block content%}
+<nav class="navbar ">
+  <a class="navbar-brand" href="#">
+  <img src="static/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+  <span class="krishi-sevak">Krishi Sevak</span>
+  </a>
+  <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="/#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=adityaryaka@gmail.com">Contact</a>
+      </li>
+     
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="login">Login</a>
+      </li>
+      <li class="nav-item">
+          <a href='tnc'><button class="btn btn-primary" type="submit">Terms and Conditions</button></a>
+      </li>
+  </ul>
+</nav> 
+<div class="loginform">
+  
+  <form class="signup" method="POST">
+    <h1>Welcome!</h1>
+    
+    <label for="Name" class="form-label">Name</label>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" id="firstName" name="firstName" id="firstName" placeholder="Enter First Name" required>
+      <input type="text" class="form-control" id="lastName" name="lastName" id="lastName" placeholder="Enter Last Name" >
+    </div>
+    <div class="mb-3">
+      <label for="area" class="form-label">Farm Area</label>
+      <input type="number" class="form-control" id="area" name="area" placeholder="Farm area in sq.metres" required>
+    </div> 
+    <label for="state" class="form-label">State</label>
+    <div class="input-group mb-3">
+      
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="stateDropdown" data-bs-toggle="dropdown" aria-expanded="false">Select State</button>
+      <ul class="dropdown-menu" aria-labelledby="stateDropdown" id="stateList" style="max-height: 200px; overflow-y: auto;">
+        <!-- State options will be added dynamically here -->
+      </ul>
+      <input type="text" class="form-control" aria-label="Text input with dropdown button" id="selectedState"  name="state" placeholder="State" required>
+    </div>
+    <label for="district" class="form-label">District</label>
+    <div class="input-group mb-3">
+      
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="districtDropdown" data-bs-toggle="dropdown" aria-expanded="false" disabled>Select District</button>
+      <ul class="dropdown-menu" aria-labelledby="districtDropdown" id="districtList" style="max-height: 200px; overflow-y: auto;" name="district" placeholder="District" required>
+        <!-- District options will be added dynamically here -->
+      </ul>
+      <input type="text" class="form-control" aria-label="Text input with dropdown button" id="selectedDistrict"  name="district">
+    </div>  
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter Email" required>
+    </div>
+    <div class="mb-3">
+        <label for="password1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password1" name="password1" id="password1" placeholder="Enter Password" required>
+    </div>
+    <div class="mb-3">
+        <label for="password2" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="password2" name="password2" id="password2" placeholder="Confirm Password" required>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<script>
+  // Sample dictionary of states and districts
+  const stateDistricts = {
+    "Andhra Pradesh": ['Adilabad', 'Anantapur', 'Chittoor', 'East_Godavari', 'Guntur', 'Hyderabad', 'Kadapa', 'Karimnagar', 'Khammam/Bhadrachalam', 'Krishna', 'Kurnool', 'Mahbubnagar', 'Medak', 'Nalgonda', 'Nellore', 'Nizamabad', 'Prakasam', 'Rangareddi', 'Srikakulam', 'Visakhapatnam', 'Vizianagaram', 'Warangal', 'West_Godavari'],
+    "Andman & Nicobar Island": ['Andaman_Nicobar_Is'],
+    "Arunachal Pradesh": ['Anjaw', 'Changlang', 'East Kameng', 'East Siang', 'Kurung Kumey', 'Lohit', 'Lower Dibang_Valley', 'Lower Subansiri', 'Papum Pare', 'Tawang', 'Tirap', 'Upper Dibang Valley', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'],
+    "Assam": ['Bakra', 'Barpeta', 'Bongaigaon', 'Cachar', 'Chirang', 'Darrang', 'Dhemaji', 'Dhubri', 'Dibrugarh', 'Goalpara', 'Golaghat', 'Hailakandi', 'Jorhat', 'Kamrup', 'Karbi Anglong', 'Karimganj', 'Lakhimpur', 'Marigaon', 'Nagaon', 'Nalbari', 'North_Cachar_Hills', 'Sibsagar', 'Sonitpur', 'Tinsukia', 'Udalguri'],
+    "Bihar": ['Araria', 'Arwal', 'Aurangabad-Bi', 'Banka', 'Begusarai', 'Bhagalpur', 'Bhojpur', 'Buxar', 'Darbhanga', 'East Champaran', 'Gaya', 'Gopalganj', 'Jamui', 'Jehanabad', 'Kaimur', 'Katihar', 'Khagaria', 'Kishanganj', 'Lakhisarai', 'Madhepura', 'Madhubani', 'Munger', 'Muzaffarpur', 'Nalanda', 'Nawada', 'Patna', 'Purnia', 'Rohtas', 'Saharsa', 'Samastipur', 'Saran', 'Sheikhpura', 'Sheohar', 'Sitamarhi', 'Siwan', 'Supaul', 'Vaishali', 'West Champaran'],
+    "Chandigarh": ['Chandigarh'],
+    "Chattisgarh": ['Bastar', 'Bilaspur-Cg', 'Dantewada', 'Dhamtari', 'Durg', 'Janjgir', 'Jashpur', 'Kanker', 'Kawardha/Kabir Dham', 'Korba', 'Koriya', 'Mahasamund', 'Raigarh-Cg', 'Raipur', 'Surguja (Ambikapur)'],
+    "Dadara & Nagar Havali": ['Dadra_&_Nagar_Haveli'],
+    "Daman & Diu": ['Daman', 'Diu'],
+    "Delhi": ['Central', 'City Zone', 'Civili Line', 'Karol Bagh', 'Najafgarh', 'Narela', 'Rohini', 'S. Pahar Ganj', 'Shahadra (N)', 'Shahadra (S)', 'South', 'West'],
+    "Goa": ['Goa'],
+    "Gujarat": ['Ahmedabad', 'Amreli', 'Anand', 'Banaskantha', 'Bharuch', 'Bhavnagar', 'Dahod', 'Dang', 'Gandhinagar', 'Godhara', 'Jamnagar', 'Junagadh', 'Kheda', 'Kutch', 'Mahesana', 'Narmada', 'Navsari', 'Patan', 'Porbandar', 'Rajkot', 'Sabarkantha', 'Surat', 'Surendranagar', 'Vadodara', 'Valsad', 'Tapi'],
+    "Haryana": ['Ambala', 'Bhiwani', 'Faridabad', 'Fatehabad', 'Gurgaon', 'Hisar', 'Jhajjar', 'Kaithal', 'Karnal', 'Kurukshetra', 'Mewat', 'Narnaul', 'Palwal', 'Panchkula', 'Panipat', 'Rewari', 'Rohtak', 'Sirsa', 'Sonipat', 'Yamunanagar'],
+    "Himachal Pradesh": ['Bilaspur-Hp', 'Chamba', 'Hamirpur-Hp', 'Kangra', 'Kullu', 'Mandi', 'Shimla', 'Sirmaur', 'Solan', 'Una'],
+    "Jammu & Kashmir": ['Baramula', 'Doda', 'Jammu', 'Kathua', 'Kishtwar', 'Poonch', 'Rajouri', 'Ramban', 'Reasi', 'Sambha', 'Udhampur'],
+    "Jharkhand": ['Bokaro', 'Chatra', 'Deogarh', 'Dhanbad', 'Dumka', 'East Singhbhum', 'Garhwa', 'Giridih', 'Godda', 'Gumla', 'Hazaribagh', 'Jamtara', 'Kodarma', 'Lathehar', 'Lohardaga', 'Pakur', 'Palamu', 'Ranchi', 'Sahibganj', 'Saraikela-Kharsawan', 'Simdega', 'West Singhbhum'],
+    "Karnataka": ['Bagalkot', 'Bangalore Rural', 'Bangalore Urban', 'Belgaum', 'Bellary', 'Bidar', 'Bijapur', 'Chamarajanagar', 'Chikkaballapur', 'Chikmagalur', 'Chitradurga', 'Dakshina Kannada', 'Davanagere', 'Dharwad', 'Gadag', 'Hassan', 'Haveri', 'Kodagu', 'Kolar', 'Koppal', 'Mandya', 'Mysore', 'Raichur', 'Ramanagara', 'Shimoga', 'Tumkur', 'Udupi', 'Uttara Kannada'],
+    "Kerala": ['Alappuzha', 'Ernakulam', 'Idukki', 'Kannur', 'Kasaragod', 'Kollam', 'Kottayam', 'Kozhikode', 'Malappuram', 'Palakkad', 'Pathanamthitta', 'Thiruvananthapuram', 'Thrissur', 'Wayanad'],
+    "Lakshadweep": ['Lakshadweep'],
+    "Madhya Pradesh": ['Anupur', 'Ashok Nagar', 'Balaghat', 'Barwani', 'Betul', 'Bhind', 'Bhopal', 'Burhanpur', 'Chhatarpur', 'Chhindwara', 'Damoh', 'Datia', 'Dewas', 'Dhar', 'Dindori', 'Guna', 'Gwalior', 'Harda', 'Hoshangabad', 'Indore', 'Jabalpur', 'Jhabua', 'Katni', 'Khandwa', 'Khargone', 'Mandla', 'Mandsaur', 'Morena', 'Narsinghpur', 'Neemuch', 'Panna', 'Raisen', 'Rajgarh', 'Ratlam', 'Rewa', 'Sagar', 'Satna', 'Seoni', 'Shahdol', 'Shajapur', 'Sheopur', 'Shivpuri', 'Sidhi', 'Tikamgarh', 'Ujjain', 'Vidisha'],
+    "Maharashtra": ['Ahmednagar', 'Akola', 'Amaravati', 'Aurangabad', 'Beed', 'Bhandara', 'Buldana', 'Chandrapur', 'Dhule', 'Gadchiroli', 'Gondia', 'Hingoli', 'Jalgaon', 'Jalna', 'Kolhapur', 'Latur', 'Nagpur', 'Nanded', 'Nandurbar', 'Nasik', 'Osmanabad', 'Parbhani', 'Pune', 'Raigad', 'Ratnagiri', 'Sangli', 'Sindhudurg', 'Solapur', 'Thane', 'Wardha', 'Washim', 'Yavatmal'],
+    "Manipur": ['Bishnupur', 'Chandel', 'Churachandpur', 'Imphal East', 'Imphal West', 'Kangpokpi', 'Senapati', 'Tamenglong', 'Thoubal', 'Ukhrul'],
+    "Meghalaya": ['Bhoi', 'East Garo Hills', 'East Khasi Hills', 'Jaintia Hills', 'South Garo Hills', 'West Garo Hills', 'West Khasi Hills'],
+    "Mizoram": ['Aizawal West', 'Aizawl East', 'Champhai', 'Kolasib', 'Lawngtlai', 'Lunglei', 'Mamit', 'Saiha', 'Serchhip'],
+    "Nagaland": ['Dimapur', 'Kiphire', 'Kohima', 'Longleng', 'Mokokchung', 'Mon', 'Peren', 'Phek', 'Tuensang', 'Wokha', 'Zunheboto'],
+    "Orissa": ['Angul', 'Balangir', 'Baleshwar', 'Bargarh', 'Baudh', 'Bhadrak', 'Cuttack', 'Debagarh', 'Dhenkanal', 'Gajapati', 'Ganjam', 'Jagatsinghapur', 'Jajpur', 'Jharsuguda', 'Kalahandi', 'Kandhamal', 'Kendrapara', 'Keonjhar', 'Khurda', 'Koraput', 'Malkangiri', 'Mayurbhanj', 'Nabarangapur', 'Nayagarh', 'Nuapada', 'Puri', 'Rayagada', 'Sambalpur', 'Sonapur / Subarnapur', 'Sundargarh'],
+    "Pondicherry": ['Pondicherry'],
+    "Punjab": ['Amritsar', 'Bathinda', 'Barnala', 'Faridkot', 'Fategarh Sahib', 'Firozpur', 'Gurdaspur', 'Hoshiarpur', 'Jalandhar', 'Ludhiana', 'Mansa-Pu', 'Moga', 'Mohali/Sasnagar', 'Mukatsar', 'Nawanshahr', 'Patiala', 'Rupnagar/Ropar', 'Sangrur', 'Tarn_Taran'],
+    "Rajasthan": ['Ajmer', 'Alwar', 'Banswara', 'Baran', 'Barmer', 'Bharatpur', 'Bhilwara', 'Bikaner', 'Bundi', 'Chittaurgarh', 'Churu', 'Dausa', 'Dhaulpur', 'Dungarpur', 'Ganganagar', 'Hanumangarh', 'Jaipur', 'Jaisalmer', 'Jalore', 'Jhalawar', 'Jhunjhunun', 'Jodhpur', 'Karauli', 'Kota', 'Nagaur', 'Pali', 'Pratapgarh', 'Rajsamand', 'Sawai_Madhopur', 'Sikar', 'Sirohi', 'Tonk', 'Udaipur'],
+    "Sikkim": ['East', 'North', 'South', 'West'],
+    "Tamil Nadu": ['Kancheepuram', 'Saidapet', 'Thiruvallore', 'Poonamallee', 'Vellore', 'Thiruppattur', 'Tiruvannamalai', 'Cheyyar', 'Cuddalore', 'Villupuram', 'Kallakurichi', 'Thanjavur', 'Thiruvarur', 'Nagapattinam', 'Karur', 'Perambalur', 'Pudukottai', 'Aranthangi', 'Madurai', 'Theni', 'Dindigul', 'Palani', 'Ramanathapuram', 'Paramakudi', 'Sivaganga', 'Virudhunagar', 'Sivakasi', 'Thirunelveli', 'Sankarankoil', 'Thoothukudi', 'Kovilpatti', 'Nagercoil', 'Salem', 'Namakkal', 'Dharmapuri', 'Krishnagiri', 'Coimbatore', 'Thiruppur', 'Erode', 'Dharapuram', 'The Nilgiris', 'Chennai Corp'],
+    "Tripura": ['East /Dhalai Tripura', 'North_Tripura', 'South_Tripura', 'West_Tripura'],
+    "Telangana": ['Adilabad', 'Bhadradri Kothagudem', 'Hyderabad', 'Jagtial', 'Jangaon', 'Jayashankar Bhupalpally', 'Jogulamba Gadwal', 'Kamareddy', 'Karimnagar', 'Khammam', 'Kumuram Bheem Asifabad', 'Mahabubabad', 'Mahbubnagar', 'Mancherial', 'Medak', 'Medchal Malkajgiri', 'Mulugu', 'Nagarkurnool', 'Nalgonda', 'Narayanpet', 'Nirmal', 'Nizamabad', 'Peddapalli', 'Rajanna Sircilla', 'Rangareddy', 'Sangareddy', 'Siddipet', 'Suryapet', 'Vikarabad', 'Wanaparthy', 'Warangal Rural', 'Warangal Urban', 'Yadadri Bhuvanagiri'],
+    "Uttar Pradesh": ['Agra', 'Aligarh', 'Allahabad', 'Ambedkar Nagar', 'Amethi', 'Amroha', 'Auraiya', 'Azamgarh', 'Baghpat', 'Bahraich', 'Ballia', 'Balrampur', 'Banda', 'Barabanki', 'Bareilly', 'Basti', 'Bhadohi', 'Bijnor', 'Budaun', 'Bulandshahr', 'Chandauli', 'Chitrakoot', 'Deoria', 'Etah', 'Etawah', 'Faizabad', 'Farrukhabad', 'Fatehpur', 'Firozabad', 'Gautam Buddha Nagar', 'Ghaziabad', 'Ghazipur', 'Gonda', 'Gorakhpur', 'Hamirpur', 'Hapur', 'Hardoi', 'Hathras', 'Jalaun', 'Jaunpur', 'Jhansi', 'Kannauj', 'Kanpur Dehat', 'Kanpur Nagar', 'Kanshiram Nagar', 'Kaushambi', 'Kushinagar', 'Lakhimpur Kheri', 'Lalitpur', 'Lucknow', 'Maharajganj', 'Mahoba', 'Mainpuri', 'Mathura', 'Mau', 'Meerut', 'Mirzapur', 'Moradabad', 'Muzaffarnagar', 'Pilibhit', 'Pratapgarh', 'Prayagraj', 'Raebareli', 'Rampur', 'Saharanpur', 'Sambhal', 'Sant Kabir Nagar', 'Shahjahanpur', 'Shamli', 'Shravasti', 'Siddharthnagar', 'Sitapur', 'Sonbhadra', 'Sultanpur', 'Unnao', 'Varanasi'],
+    "Uttarakhand": ['Almora', 'Bageshwar', 'Chamoli', 'Champawat', 'Dehradun', 'Haridwar', 'Nainital', 'Pauri Garhwal', 'Pithoragarh', 'Rudraprayag', 'Tehri Garhwal', 'Udham Singh Nagar', 'Uttarkashi'],
+    "West Bengal": ['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur', 'Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 'Kalimpong', 'Kolkata', 'Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman', 'Paschim Medinipur', 'Purba Bardhaman', 'Purba Medinipur', 'Purulia', 'South 24 Parganas', 'Uttar Dinajpur'],
+  };
+
+  // Function to populate state dropdown
+  function populateStateDropdown() {
+    const stateDropdown = document.getElementById('stateList');
+    for (const state in stateDistricts) {
+      const stateOption = document.createElement('li');
+      stateOption.innerHTML = `<a class="dropdown-item" href="#" onclick="selectState('${state}')">${state}</a>`;
+      stateDropdown.appendChild(stateOption);
+    }
+  }
+
+  // Function to populate district dropdown based on selected state
+  function populateDistrictDropdown(selectedState) {
+    const districtDropdown = document.getElementById('districtList');
+    districtDropdown.innerHTML = ''; // Clear previous options
+
+    const districts = stateDistricts[selectedState];
+    for (const district of districts) {
+      const districtOption = document.createElement('li');
+      districtOption.innerHTML = `<a class="dropdown-item" href="#" onclick="selectDistrict('${district}')">${district}</a>`;
+      districtDropdown.appendChild(districtOption);
+    }
+
+    document.getElementById('districtDropdown').removeAttribute('disabled');
+  }
+
+  // Function to handle state selection
+  function selectState(state) {
+    document.getElementById('selectedState').value = state;
+    populateDistrictDropdown(state);
+  }
+
+  // Function to handle district selection
+  function selectDistrict(district) {
+    document.getElementById('selectedDistrict').value = district;
+  }
+
+  // Populate state dropdown on page load
+  window.onload = populateStateDropdown;
+</script>
+{% endblock %}

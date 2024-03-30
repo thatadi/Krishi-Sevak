@@ -1,0 +1,308 @@
+{% extends "skeleton.html" %} {% block content%}
+<div class="container-fluid bg-container">
+  <nav class="navbar ">
+      <a class="navbar-brand" href="#">
+      <img src="static/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+      <span class="krishi-sevak">Krishi Sevak</span>
+      </a>
+      <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=adityaryaka@gmail.com">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Languages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+  
+  
+          <li class="nav-item">
+            <a class="nav-link" href="signup">Signup</a>
+          </li>
+          <li class="nav-item">
+              <a href='login'><button class="btn btn-primary" type="submit">Login</button></a>
+          </li>
+      </ul>
+  </nav> 
+  <div class="draw d-flex justify-content-center">
+
+    <a href = '#products'><button type="button" class="btn btn-warning mx-3">Discover our Products</button></a>
+    <a href = '#faq'><button type="button" class="btn btn-warning mx-3">Frequently Asked Questions</button></a><br>
+    <a href = '#testimonial'><button type="button" class="btn btn-warning mx-2">Read Testimonials</button></a>
+
+  </div>
+</div>    
+
+
+
+<div class="about">
+  <div class="row" id="about">
+    <div class="col-md-8"  >
+      <h4>About Us</h4>
+      <hr color="black">
+
+      <p>
+        At Krishi Sevak, we're dedicated to revolutionizing the agricultural landscape in India. Through innovative solutions and unwavering commitment, we empower farmers nationwide with cutting-edge technology and data-driven insights. Our mission is clear: to bridge the gap between traditional farming methods and modern advancements, ensuring sustainable growth and prosperity for all. With a team driven by passion and a vision for change, we strive to provide farmers with the tools, knowledge, and support they need to thrive in today's dynamic agricultural environment. Join us on our journey as we cultivate a brighter, more sustainable future for Indian agriculture.
+      </p>
+      <br>
+      <h4>Our Purpose</h4>
+      <hr color="black">
+
+      <p>Our mission is deeply rooted in our belief that every farmer deserves access to the latest technology and data-driven insights to thrive in today's agricultural landscape. We are driven by a singular purpose: to empower farmers with the tools, knowledge, and support they need to unlock their full potential and achieve success.</p>
+      <br>
+      <h4>A Vision for the Future</h4>
+      <hr color="black">
+
+      <p>Our vision extends beyond mere profitability; it encompasses the creation of a future where farming is not just a livelihood but a source of pride, prosperity, and sustainability. We envision a world where every farmer is equipped with the resources and expertise to cultivate bountiful harvests while preserving the land for future generations.</p>
+      <br>
+      
+
+    </div>
+    <div class="imgonly">
+      <img src="static/pexels-anna-shvets-5231143.jpg" class="img-fluid" alt="img">
+    </div>
+  </div>
+
+</div>
+<br>
+
+
+
+<div class="container-fluid xl-container" id="products">
+  <div class="container text-center" >
+    <h1>Our Products</h1>
+      <div class="row">
+        <br>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="static/crop.png"   class="card-img-top-1" alt="crop prediction">
+            <div class="card-body">
+              <h5 class="card-title">Crop Prediction</h5>
+              <p class="card-text">Accurate crop predictions for smarter farming decisions.</p>
+              <a href="prediction" class="btn btn-primary">Get Recommendation</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="static/market-research.png" class="card-img-top-1" alt="market analysis">
+            <div class="card-body">
+              <h5 class="card-title">Market Analysis</h5>
+              <p class="card-text">Market analysis tools for informed agricultural investments.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="static/schedule.png" class="card-img-top-1" alt="schedule">
+            <div class="card-body">
+              <h5 class="card-title">Crop Scheduling</h5>
+              <p class="card-text">Optimized crop scheduling for higher yields and profits.</p>
+              <a href="schedule" class="btn btn-primary">Get Scheduling</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div> 
+</div>
+
+<div class="faq" id="faq">
+  <br>
+  <div class="heading"><h1>Frequently Asked Questions</h1></div>
+  
+  <br>
+  <br>
+  <div class="container text-center">
+    <div class="rowfaq">
+      <div class="col">
+        <p>
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample">
+            How can I get started with Krishi Sevak?
+          </button>
+        </p>
+        <div style="min-height: 120px;">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample1">
+            <div class="card card-body" style="width: 300px;">
+              Getting started with Krishi Sevak is easy! Sign up on our website or app, explore our services, and optimize your farming operations with our tools and resources.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <p>
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample">
+            Does Krishi Sevak offer training resources?
+          </button>
+        </p>
+        <div style="min-height: 120px;">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample2">
+            <div class="card card-body" style="width: 300px;">
+              Yes, we offer training sessions, webinars, and educational resources to empower farmers with the knowledge and skills needed for success in agriculture.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <p>
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample3" aria-expanded="false" aria-controls="collapseWidthExample">
+            How can I benefit from Krishi Sevak's market analysis?
+          </button>
+        </p>
+        <div style="min-height: 120px;">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample3">
+            <div class="card card-body" style="width: 300px;">
+              Our market analysis tools offer insights into market trends, pricing, and demand, helping farmers make strategic investment decisions for higher profits.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rowfaq">
+      <div class="col">
+        <p>
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample4" aria-expanded="false" aria-controls="collapseWidthExample">
+            How accurate are the crop predictions?
+          </button>
+        </p>
+        <div style="min-height: 120px;">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample4">
+            <div class="card card-body" style="width: 300px;">
+              Our crop prediction models use advanced algorithms and real-time data for accurate forecasts, aiding farmers in informed crop decisions.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <p>
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample5" aria-expanded="false" aria-controls="collapseWidthExample">
+            Are there subscription plans available?
+          </button>
+        </p>
+        <div style="min-height: 120px;">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample5">
+            <div class="card card-body" style="width: 300px;">
+              Yes, we offer flexible subscription plans tailored to the needs of individual farmers, with options for both free and premium services.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <p>
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample6" aria-expanded="false" aria-controls="collapseWidthExample">
+            How often are government scheme updates provided?
+          </button>
+        </p>
+        <div style="min-height: 120px;">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample6">
+            <div class="card card-body" style="width: 300px;">
+              We offer real-time updates on government agricultural schemes, keeping farmers informed about the latest opportunities.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+</div>
+<div class="test1" id="testimonial"><h1>Testimonials</h1></div>
+<div class="test" >
+  <div id="carouselExampleIndicators" class="carousel slide">
+    
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="static/farmer1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3>Ramesh Patel</h3>
+                  <p class="card-text">"Krishi Sevak has transformed the way I farm, making it easier to predict crop yields and plan effectively."</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="static/farmer2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3>Sunita Devi</h3>
+                  <p class="card-text">"Thanks to Krishi Sevak, I've gained valuable insights into market trends, helping me make better decisions for my farm."</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="static/farmer3.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3>Rajesh Kumar</h3>
+                  <p class="card-text">"Krishi Sevak's crop scheduling feature has optimized my planting schedule, leading to higher yields and profits."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="static/farmer5.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3>Anjali Sharma</h3>
+                  <p class="card-text"> "With Krishi Sevak's weather live updates, I can now anticipate and prepare for weather changes, ensuring the health of my crops."</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="static/farmer4.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3>Deepak Singh</h3>
+                  <p class="card-text">"Krishi Sevak keeps me informed about the latest government schemes, helping me take advantage of available resources."</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="static/farmer6.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3>Priya Mishra</h3>
+                  <p class="card-text"> "Using Krishi Sevak's chatbot, I've received quick and helpful answers to my farming queries, saving me time and effort."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      
+    </button>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}
