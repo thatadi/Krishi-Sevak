@@ -10,11 +10,21 @@ Krishi Sevak is a comprehensive web application designed to revolutionize agricu
 4. **Market Intelligence:** Provides market intelligence and price trends for agricultural commodities, enabling farmers to make informed decisions regarding crop selection, timing of harvest, and marketing strategies.
 5. **User Dashboard:** Offers a user-friendly dashboard interface for easy access to personalized recommendations, schedules, weather forecasts, and other relevant information.
 
+*Some of the features are still in development*
 
 ## Installation:
 1. Clone the repository: `git clone https://github.com/your_username/krishi-sevak.git`
-2. Install dependencies: `pip install -r requirements.txt`
-5. Run the application: `python main.py`
+2. Install dependencies: `pip install -r requirements.txt` (Make sure to create a virtual environment and these install these requirements there )
+3. Activate your virtual environment.
+4. Run the application: `python main.py`
+
+## Project Screenshots:
+![Screenshot 2024-03-19 192248](https://github.com/thatadi/Krishi-Sevak/assets/112794899/36e49f52-aea9-48a1-82f3-8d12bf74d8f8)
+![Screenshot 2024-04-15 202128](https://github.com/thatadi/Krishi-Sevak/assets/112794899/86a29d06-deda-4a72-ab76-82d68bdf11cd)
+![Screenshot 2024-04-15 202233](https://github.com/thatadi/Krishi-Sevak/assets/112794899/0a92bd72-8900-4fd1-88dc-ed2f6b015acb)
+
+*More screenshots in screenshots folder*
+
 
 ## Usage:
 1. Access the web application through the provided URL or localhost.
