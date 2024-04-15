@@ -19,7 +19,8 @@ Krishi Sevak is a comprehensive web application designed to revolutionize agricu
 4. Run the application: `python main.py`
 
 ## Project Screenshots:
-![Screenshot 2024-03-19 192248](https://github.com/thatadi/Krishi-Sevak/assets/112794899/36e49f52-aea9-48a1-82f3-8d12bf74d8f8)
+![Screenshot 2024-04-15 201807](https://github.com/thatadi/Krishi-Sevak/assets/112794899/fddee0bb-2e74-4651-950b-4ec9435dd827)
+![Screenshot 2024-04-15 201825](https://github.com/thatadi/Krishi-Sevak/assets/112794899/163f761f-9a79-4db0-9b4e-f22101d73468)
 ![Screenshot 2024-04-15 202128](https://github.com/thatadi/Krishi-Sevak/assets/112794899/86a29d06-deda-4a72-ab76-82d68bdf11cd)
 ![Screenshot 2024-04-15 202233](https://github.com/thatadi/Krishi-Sevak/assets/112794899/0a92bd72-8900-4fd1-88dc-ed2f6b015acb)
 
